@@ -14,6 +14,8 @@
   padding: 2rem;
   box-sizing: border-box;
   position: relative; 
+ 
+  
 }
 
 .logo {
@@ -56,6 +58,55 @@
 .content-area {
   background-color: #000000;
   min-height: 100vh;
-  padding: 2rem;
+  padding-top: 5rem;
+  text-align: center;
   color: white;
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+}
+
+.autoswipe {
+  padding: 1rem 1.5rem;             /* 上下1rem、左右1.5remの余白 */
+  margin: 1rem auto;                /* 上下1remの余白 */
+  width: calc(100vw - 3rem);       /* 左右余白を引いた幅 */
+  max-width: none;
+  border-radius: 12px;              /* 少しだけ丸みを残す */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 影も少し残す */
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  height: 400px;
+}
+
+.gallery-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.gallery-image {
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
