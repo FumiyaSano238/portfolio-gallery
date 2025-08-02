@@ -1,0 +1,108 @@
+.about-page {
+  background-color: black;
+  color: white;
+  min-height: 80vh;
+  padding: 40px 60px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;  /* 全体的に大きめの文字サイズ */
+}
+
+/* 趣味セクション */
+.hobby {
+  margin-top: 40px;
+}
+
+.hobby h3 {
+  margin-bottom: 25px;
+}
+
+/* 横並びにする親ボックス（趣味・好きな食べ物共通） */
+.hobby-item,
+.Favorite-item {
+  display: flex;
+  flex-direction: row;  /* 画像左・リスト右の横並び */
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+  justify-content: flex-start; /* 左寄せ */
+}
+
+/* 画像と説明の縦並び */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-description {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* 趣味の画像 */
+.hobby-image {
+  width: 600px;  
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+  margin-bottom: 30px;
+}
+
+/* 好きな食べ物の画像 */
+.Favorite-image {
+  width: 400px;  
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+/* 趣味リスト・好きな食べ物リスト */
+.hobby-list,
+.Favorite-list {
+  list-style: disc inside;
+  margin-top: 30px;
+  margin-left: 400px;
+  padding-left: 0;
+  text-align: right;  /* テキストを右寄せ */
+  font-size: 40px;
+  line-height: 1.8;
+  flex: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* 好きな食べ物セクション */
+.Favorite {
+  margin-top: 40px;
+}
+
+.Favorite h3 {
+  margin-bottom: 25px;
+}
+
+
+/* スライドアニメーション用の基本スタイル */
+.slide-fade-in {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 左から右にスライド */
+.slide-fade-in.left {
+  transform: translateX(-50px);
+}
+
+/* 右から左にスライド */
+.slide-fade-in.right {
+  transform: translateX(50px);
+}
+
+/* アクティブ時に表示 */
+.slide-fade-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}

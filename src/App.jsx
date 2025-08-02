@@ -1,7 +1,10 @@
 import './App.css'
 import './index.css'
+import SlideFadeInText from './components/SlideFadeInText';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import About from './About';
 
-// 画像読み込み（全てimport）
+// 画像読み込み
 import imgkyoto from './assets/images/kyoto.jpg'
 import imgsakura from './assets/images/sakura.jpg'
 import imgyoake from './assets/images/yoake.jpg'
@@ -26,37 +29,58 @@ const images = [
   imgマッターホルン,
 ]
 
-function App() {
+// Homeコンポーネントはページ固有のコンテンツのみを返す
+function Home() {
   return (
-    <div className="app-container">
-      <header className="header">
-        <h1 className="logo">My Favorite Scenery</h1>
-        <nav className="nav">
-          <h3>about</h3>
-          <h3>all picture</h3>
-        </nav>
-      </header>
-
-      <main className="content-area">
-           <h2>Scenery Gallery</h2>
-        <div className="autoswipe">
-          <div className="gallery-track">
-             {images.map((src, index) => (
-               <img
-                 key={index}
-                 src={src}
-                 alt={`gallery-${index}`}
-                 className="gallery-image"
-               />
-             ))}
-             {images.map((src, index) => (
-               <img key={index + images.length} src={src} alt={`gallery-${index}`} class="gallery-image" />
-             ))}
-          </div>
+    <>
+      <SlideFadeInText>Scenery Gallery</SlideFadeInText>
+      <div className="autoswipe">
+        <div className="gallery-track">
+          {images.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`gallery-${index}`}
+              className="gallery-image"
+            />
+          ))}
+          {images.map((src, index) => (
+            <img
+              key={index + images.length}
+              src={src}
+              alt={`gallery-${index}`}
+              className="gallery-image"
+            />
+          ))}
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   )
 }
 
-export default App
+// Appコンポーネントで共通のレイアウトとルーティングを管理
+function App() {
+  return (
+    <Router>
+      <div className="app-container">
+        <header className="header">
+          <h1 className="logo">My Favorite Scenery</h1>
+          <nav className="nav">
+            <h3><Link to="/">Home</Link></h3>
+            <h3><Link to="/about">about</Link></h3>
+            <h3>all picture</h3>
+          </nav>
+        </header>
+
+        <main className="content-area">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+export default App;

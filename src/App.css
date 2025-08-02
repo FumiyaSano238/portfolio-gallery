@@ -110,3 +110,16 @@
     transform: translateX(-100%);
   }
 }
+
+/* 初期状態（アニメーション前） */
+.slide-fade-in {
+  opacity: 0;
+  transform: translateX(-80px); /* 左に少しずらす */
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+/* アニメーション開始後 */
+.slide-fade-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}
