@@ -3,6 +3,9 @@ import './index.css'
 import SlideFadeInText from './components/SlideFadeInText';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from './About';
+import AllPicture from './AllPicture';
+
+
 
 // 画像読み込み
 import imgkyoto from './assets/images/kyoto.jpg'
@@ -68,7 +71,7 @@ function App() {
           <nav className="nav">
             <h3><Link to="/">Home</Link></h3>
             <h3><Link to="/about">about</Link></h3>
-            <h3>all picture</h3>
+            <h3><Link to="/all-picture">all picture</Link></h3>
           </nav>
         </header>
 
@@ -76,6 +79,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/all-picture" element={<AllPicture />} />
           </Routes>
         </main>
       </div>
