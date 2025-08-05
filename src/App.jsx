@@ -8,7 +8,7 @@ import AllPicture from './AllPicture';
 
 
 // 画像読み込み
-import imgkyoto from './assets/images/kyoto.jpg'
+import imgkyoto from './assets/imagesKKyoto.jpg'
 import imgsakura from './assets/images/sakura.jpg'
 import imgyoake from './assets/images/yoake.jpg'
 import imgエアーズロック from './assets/images/エアーズロック.jpg'
