@@ -123,3 +123,41 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+/* 768px以下の画面幅に適用 */
+@media (max-width: 768px) {
+  .header {
+    height: auto; /* 高さを自動に */
+    flex-direction: column; /* 要素を縦並びに */
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 1.5rem; /* ロゴとナビの間の隙間 */
+  }
+
+  .logo {
+    font-size: 2rem; /* 少し小さく */
+    text-align: center;
+    border-bottom: 1px solid #f7f7f7;
+  }
+
+  .nav {
+    position: static; /* 絶対配置を解除 */
+    flex-direction: row; /* 横並びを維持 */
+    justify-content: center;
+    gap: 1.5rem; /* 各メニュー間の隙間を調整 */
+    width: 100%;
+  }
+
+  .nav h3 {
+    font-size: 1rem; /* 少し小さく */
+  }
+
+  .autoswipe {
+    height: 250px; /* スワイプエリアの高さを調整 */
+  }
+
+  .content-area {
+    padding-top: 2rem;
+    font-size: 1.2rem;
+  }
+}

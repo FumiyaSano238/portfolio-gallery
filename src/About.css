@@ -106,3 +106,53 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+
+/* --- About.css レスポンシブ対応 --- */
+
+/* 768px以下の画面幅に適用 */
+@media (max-width: 768px) {
+  /* ページ全体の余白を調整 */
+  .about-page {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  /* ▼▼▼ この部分がレイアウトの核です ▼▼▼ */
+  /* 画像とリストを含む親コンテナのレイアウトを縦並びに変更 */
+  .hobby-item,
+  .Favorite-item {
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: center;   /* 中央揃えにする */
+    gap: 20px;             /* 各要素間の隙間 */
+  }
+  /* ▲▲▲ ここまで ▲▲▲ */
+
+  /* 画像の幅を画面に合わせる */
+  .hobby-image,
+  .Favorite-image {
+    width: 100%; 
+    height: auto;
+    max-width: 400px; /* 大きくなりすぎないように最大幅を指定 */
+    margin-bottom: 0; /* PC用のマージンをリセット */
+  }
+
+  /* 画像の説明文のスタイル */
+  .image-description {
+    font-size: 16px;
+    margin-top: 8px; /* 画像との隙間 */
+  }
+
+  /* リストのスタイルを調整 */
+  .hobby-list,
+  .Favorite-list {
+    width: 90%;
+    max-width: 400px;
+    margin-left: 0;
+    padding-left: 30px;
+    list-style-position: outside;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.8;
+  }
+}
